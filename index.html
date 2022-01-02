@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="evolution.css">
-    <title>DBZFightingChampions</title>
+    <title>Game-1</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
@@ -109,6 +109,12 @@
                     <li id="goBackToPauseState" class=""><h3>Back</h3></li>
                 </ul>
             </div>
+            <div id="winningPrizes">
+                <h3 id="winningAmount">100x</h3>
+                <div id="winCash"></div>
+                <div id="showBall"></div>
+            </div>
+            <div class="wishtalks"><h3>Use Arrow Keys and Enter to select option</h3></div>
         </div>
     </div>
     <div id="gameSettings">
@@ -123,10 +129,11 @@
             </li>
             <li id="goBackToMainMenu" class=""><h3>Back</h3></li>
         </ul>
+        <div class="wishtalks"><h3>Use Arrow Keys and Enter to select option</h3></div>
     </div>
     <div id="evolutionCharacter">
         <div class="writeEvol"><h3>Evolution</h3></div>
-        <div ><h3 id="moneyCount">Money: 0</h3></div>
+        <div id="moneyCountDiv"><h3 id="moneyCount">Money: 0 </h3><div class="zenniPic"></div></div>
         <ul>
             <li id="kick" class="evolutionCost">
                 <ul>
@@ -137,7 +144,7 @@
                             <div id="kickStrengthMeter" class="strengthMeter"></div>
                         </div>
                     </li>
-                    <li><h3 class="cost">500</h3></li>
+                    <li class="cost"><h3>500</h3><div class="zenniPic"></div></li>
                 </ul>
             </li>
             <li id="punch">
@@ -149,7 +156,7 @@
                             <div id="punchStrengthMeter" class="strengthMeter"></div>
                         </div>
                     </li>
-                    <li><h3 class="cost">500</h3></li>
+                    <li class="cost"><h3>500</h3><div class="zenniPic"></div></li>
                 </ul>
             </li>
             <li id="specialmove">
@@ -161,11 +168,12 @@
                             <div id="specialmoveStrengthMeter" class="strengthMeter"></div>
                         </div>
                     </li>
-                    <li><h3 class="cost">500</h3></li>
+                    <li class="cost"><h3>500</h3><div class="zenniPic"></div></li>
                 </ul>
             </li>
             <li ><h3 id="backToMainMenu">Back</h3></li>
         </ul>
+        <div class="wishtalks"><h3>Use Arrow Keys and Enter to select option</h3></div>
     </div>
     <!-- <script src="evolution.js"></script> -->
     <script src="index.js"></script>
