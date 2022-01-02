@@ -25,7 +25,7 @@ let selectEvolutionOptions=["kick","punch","specialmove","backToMainMenu"];
 let indexOfAttack={"kick":0,"punch":1,"specialmove":2};
 let randomMoves=[kick,punch,moveLeftPlayer,moveRightPlayer,specialAttack];
 let attackStrength={"player1":[20,20,20],"player2":[20,20,20]};
-let curEvolutionOption=0,Money=100,isEvolution=0;
+let curEvolutionOption=0,Money=100000,isEvolution=0;
 removeAttackDefense=()=>{
     let element=document.getElementById('player1Character');
     element.style.backgroundImage="url('img/vegettofacingright.png')";
@@ -238,9 +238,10 @@ function deductMoney(){
         updateStrengthMeter();
     }
     else{
+
         playDummySound();
         Money+=500;
-        attackStrength["player1"][curEvolutionOption]-=10;
+        attackStrength["player1"][curEvolutionOption]-=5;
     }
 }
 setInterval(()=>{
@@ -283,6 +284,10 @@ function healthDown(playername,typeOfQuery)
         weHaveAWinner(temp);
     }
 }
+let fired = false;
+document.onkeyup = function() {
+    fired = false;
+};
 function updateMargin(playername,typeOfQuery)
 {
     let element=document.getElementById(playername+'Character');
@@ -547,7 +552,7 @@ function checkKey(e) {
         }
     }
 }
-document.addEventListener('keypress', (event) => {
+document.addEventListener('keydown', (event) => {
     var name = event.key;
     var code = event.code;
     if(code=='Enter')
@@ -705,16 +710,19 @@ document.addEventListener('keypress', (event) => {
         {
             jumpPlayer("player1");
         }
-        if(name=='k')
+        if(fired==false&&name=='k')
         {
+            fired=true;
             kick("player1");
         }
-        if(name=='l')
+        if(fired==false&&name=='l')
         {
+            fired=true;
             punch("player1");
         }
-        if(name=='i')
+        if(fired==false&&name=='i')
         {
+            fired=true;
             specialAttack("player1");
         }
     }
