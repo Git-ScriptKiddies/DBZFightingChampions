@@ -19,8 +19,8 @@ let Phase="";
 let volumeGame=32,selectOptions=0,curSelectedOption=0,curSelectedSettings=0;
 let isSelectedOption=["volumeKey","goBackToPauseState"];
 let isSelectedSettings=["volumeKeySettings","goBackToMainMenu"];
-let BGM={"selectCharacter":new Audio('/img/selectCharactersbgm.mp3'),"wish":new Audio('/img/wishbgm.mp3'),"matchStart":new Audio("/img/startmatchbgm.mp3"),"mainMenu":new Audio("/img/openingbgm.mp3"),"evolution":new Audio("/img/evolutionbgm.mp3")};
-let matchScene=["url('/img/fightday.gif')","url('/img/fightevening.gif')","url('/img/fightnight.gif')"];
+let BGM={"selectCharacter":new Audio('img/selectCharactersbgm.mp3'),"wish":new Audio('img/wishbgm.mp3'),"matchStart":new Audio("img/startmatchbgm.mp3"),"mainMenu":new Audio("img/openingbgm.mp3"),"evolution":new Audio("img/evolutionbgm.mp3")};
+let matchScene=["url('img/fightday.gif')","url('img/fightevening.gif')","url('img/fightnight.gif')"];
 let selectEvolutionOptions=["kick","punch","specialmove","backToMainMenu"];
 let indexOfAttack={"kick":0,"punch":1,"specialmove":2};
 let randomMoves=[kick,punch,moveLeftPlayer,moveRightPlayer,specialAttack];
@@ -28,7 +28,7 @@ let attackStrength={"player1":[20,20,20],"player2":[20,20,20]};
 let curEvolutionOption=0,Money=100,isEvolution=0;
 removeAttackDefense=()=>{
     let element=document.getElementById('player1Character');
-    element.style.backgroundImage="url('/img/vegettofacingright.png')";
+    element.style.backgroundImage="url('img/vegettofacingright.png')";
     element.style.height="25vh";
     element.style.width="20vh";
 }
@@ -72,7 +72,7 @@ function setFace()
     }
     let element=document.getElementById("player1Character");
     let temp=Player["player1"]+facingPlayer["player1"];
-    temp="url('/img/"+Player["player1"]+"/"+temp+".png')";
+    temp="url('img/"+Player["player1"]+"/"+temp+".png')";
     element.style.backgroundImage=temp;
     element.style.height=heightofCharacters[Player["player1"]]+"vh";
     element.style.width=widthofCharacters[Player["player1"]]+"vh";
@@ -80,7 +80,7 @@ function setFace()
     element.style.zIndex=0;
     element=document.getElementById("player2Character");
     temp=Player["player2"]+facingPlayer["player2"];
-    temp="url('/img/"+Player["player2"]+"/"+temp+".png')";
+    temp="url('img/"+Player["player2"]+"/"+temp+".png')";
     element.style.backgroundImage=temp;
     element.style.height=heightofCharacters[Player["player2"]]+"vh";
     element.style.width=widthofCharacters[Player["player2"]]+"vh";
@@ -258,7 +258,7 @@ function updateMargin(playername,typeOfQuery)
         if(temp2<positionPlayer[temp1]+widthofCharacters[Player[temp1]])
         {
             healthDown(temp1,typeOfQuery);
-            let hitEffect=new Audio('/img/'+typeOfQuery+'.mp3');
+            let hitEffect=new Audio('img/'+typeOfQuery+'.mp3');
             hitEffect.play();
             hitEffect.volume=volumeGame/32;
         }
@@ -281,7 +281,7 @@ function updateMargin(playername,typeOfQuery)
         if(temp2+widthofCharacters[Player[playername]+typeOfQuery]>positionPlayer[temp1])
         {
             healthDown(temp1,typeOfQuery);
-            let hitEffect=new Audio('/img/'+typeOfQuery+'.mp3');
+            let hitEffect=new Audio('img/'+typeOfQuery+'.mp3');
             hitEffect.play();
             hitEffect.volume=volumeGame/32;
         }
@@ -299,7 +299,7 @@ function kick(playername)
     let element=document.getElementById(playername+'Character');
     let temp=Player[playername]+"kick"+facingPlayer[playername];
     updateMargin(playername,"kick");
-    temp="url('/img/"+Player[playername]+"/"+temp+".png')";
+    temp="url('img/"+Player[playername]+"/"+temp+".png')";
     element.style.backgroundImage=temp;
     element.style.height=heightofCharacters[Player[playername]+"kick"]+"vh";
     element.style.width=widthofCharacters[Player[playername]+"kick"]+"vh";
@@ -311,7 +311,7 @@ function punch(playername)
     let element=document.getElementById(playername+'Character');
     let temp=Player[playername]+"punch"+facingPlayer[playername];
     updateMargin(playername,"punch");
-    temp="url('/img/"+Player[playername]+"/"+temp+".png')";
+    temp="url('img/"+Player[playername]+"/"+temp+".png')";
     element.style.backgroundImage=temp;
     element.style.height=heightofCharacters[Player[playername]+"punch"]+"vh";
     element.style.width=widthofCharacters[Player[playername]+"punch"]+"vh";
@@ -327,7 +327,7 @@ function specialAttack(playername)
         let element=document.getElementById(playername+'Character');
         let temp=Player[playername]+"specialmove"+facingPlayer[playername];
         updateMargin(playername,"specialmove");
-        temp="url('/img/"+Player[playername]+"/"+temp+".png')";
+        temp="url('img/"+Player[playername]+"/"+temp+".png')";
         element.style.backgroundImage=temp;
         element.style.height=heightofCharacters[Player[playername]+"specialmove"]+"vh";
         element.style.width=widthofCharacters[Player[playername]+"specialmove"]+"vh";
@@ -349,13 +349,13 @@ function matchBetweeen(playername1,playername2)
     element.innerText="Continue";
     element=document.getElementById("player1");
     let temp=Player["player1"]+"full";
-    temp="url('/img/"+temp+".png')";
+    temp="url('img/"+temp+".png')";
     element.style.backgroundImage=temp;
     positionPlayer["player1"]=0;
     positionPlayer["player2"]=100-widthofCharacters[Player["player2"]];
     element=document.getElementById("player2");
     temp=Player["player2"]+"full";
-    temp="url('/img/"+temp+".png')";
+    temp="url('img/"+temp+".png')";
     element.style.backgroundImage=temp;
     setFace();
     Health["player1"]=40;
@@ -369,7 +369,7 @@ function matchBetweeen(playername1,playername2)
 }
 function playDummySound()
 {
-    let dummySound=new Audio('/img/volumeChange.wav');
+    let dummySound=new Audio('img/volumeChange.wav');
     console.log(dummySound);
     dummySound.play();
     dummySound.volume=volumeGame/32;
