@@ -226,7 +226,8 @@ function updateStrengthMeter()
 function updateMoney()
 {
     let element=document.getElementById("moneyCount");
-    Money=min([Money,100000]);
+    if(Money>100000)
+        Money=100000;
     element.innerHTML="Money: "+Money;
 }
 function deductMoney(){
