@@ -434,7 +434,7 @@ body{
     border-radius: 7px;
     height: 16.1vh;
     width: 25vh;
-    margin-top: 10vh;
+    margin-top: 15vh;
     margin-left: 35vh;
     position: fixed;
     /* bottom: 70vh; */
@@ -541,4 +541,35 @@ h3{
     background-color: greenyellow;
     width: 32vh;
     height: inherit;
+}
+#winningPrizes{ 
+    display: none;
+    margin: auto;
+    margin-top: 5vh;
+    justify-content: center;
+    height: 10vh;
+    width: 50vh;
+}
+#winningAmount{
+    display: none;
+    padding-top: 2vh;
+}
+#winCash{
+    display: none;
+    background-image: url('img/zenni.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 5vh;
+    width: 5vh;
+}
+#showBall{
+    display: none;
+    background-image: url('img/1star.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 5vh;
+    width: 5vh;
+    margin-left: 2vh;
 }
