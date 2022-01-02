@@ -25,7 +25,7 @@ let selectEvolutionOptions=["kick","punch","specialmove","backToMainMenu"];
 let indexOfAttack={"kick":0,"punch":1,"specialmove":2};
 let randomMoves=[kick,punch,moveLeftPlayer,moveRightPlayer,specialAttack];
 let attackStrength={"player1":[20,20,20],"player2":[20,20,20]};
-let curEvolutionOption=0,Money=100000,isEvolution=0;
+let curEvolutionOption=0,Money=100,isEvolution=0;
 removeAttackDefense=()=>{
     let element=document.getElementById('player1Character');
     element.style.backgroundImage="url('img/vegettofacingright.png')";
@@ -226,7 +226,8 @@ function updateStrengthMeter()
 function updateMoney()
 {
     let element=document.getElementById("moneyCount");
-    element.innerHTML="Money: "+Money+"x";
+    Money=min([Money,100000]);
+    element.innerHTML="Money: "+Money;
 }
 function deductMoney(){
     Money-=500;
