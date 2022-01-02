@@ -10,7 +10,7 @@
     border-radius: 7px;
     margin: auto;
     margin-top: 10vh;
-    overflow-y: auto;
+    overflow-y: none;
 }
 .writeEvol{
     background-color: pink;
