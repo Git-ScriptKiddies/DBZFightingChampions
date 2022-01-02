@@ -142,10 +142,51 @@ function jumpPlayer(playername)
         element.classList.remove('jump');
     },500);
 }
+function closeWinningTab()
+{
+    let element=document.getElementById("showBall");
+    element.style.display="none";
+    element=document.getElementById("winCash");
+    element.style.display="none";
+    element=document.getElementById("winningAmount");
+    element.style.display="none";
+    element=document.getElementById("winningPrizes");
+    element.style.display="none";
+}
+function winBall(temp)
+{
+    temp+=1;
+    // console.log(temp);
+    let element=document.getElementById("showBall");
+    temp="url('img/"+temp+"star.png')";
+    // console.log(temp);
+    element.style.display="block";
+    element.style.backgroundImage=temp;
+}
 function YouWin(){
     let element=document.getElementById("pauseGameContents");
     element.innerText="You Win";
     element=document.getElementById("pauseGame");
+    element.style.display="block";
+    element=document.getElementById("winningPrizes");
+    element.style.display="flex";
+    let temp=getRndInteger(2);
+    if(temp)
+    {
+        temp=getRndInteger(7);
+        if(isBallAvailable[temp]==0)
+        {
+            winBall(temp);
+            // console.log(temp);
+            isBallAvailable[temp]=1;
+        }
+    }
+    temp=200+getRndInteger(200);
+    Money+=temp;
+    element=document.getElementById("winningAmount");
+    element.innerText=temp+"x";
+    element.style.display="block";
+    element=document.getElementById("winCash");
     element.style.display="block";
 }
 function YouLose(){
@@ -160,7 +201,7 @@ function weHaveAWinner(playername)
     pauseGame=0;
     let element=document.getElementById("reMatch");
     element.innerText="Rematch";
-    console.log(playername);
+    // console.log(playername);
     if(playername=="player1")
     {
         YouWin();
@@ -185,7 +226,7 @@ function updateStrengthMeter()
 function updateMoney()
 {
     let element=document.getElementById("moneyCount");
-    element.innerHTML="Money: "+Money;
+    element.innerHTML="Money: "+Money+"x";
 }
 function deductMoney(){
     Money-=500;
@@ -232,7 +273,7 @@ function healthDown(playername,typeOfQuery)
     if(playername=="player1")
     temp="player2";
     Health[playername]-=(attackStrength[temp][indexOfAttack[typeOfQuery]]/50)*strengthAttack[typeOfQuery];
-    console.log((attackStrength[temp][typeOfQuery]/50)*strengthAttack[typeOfQuery]);
+    // console.log((attackStrength[temp][typeOfQuery]/50)*strengthAttack[typeOfQuery]);
     Health[playername]=max([Health[playername]]);
     updateHealthGauge();
     isHit[playername]=1;
@@ -370,7 +411,7 @@ function matchBetweeen(playername1,playername2)
 function playDummySound()
 {
     let dummySound=new Audio('img/volumeChange.wav');
-    console.log(dummySound);
+    // console.log(dummySound);
     dummySound.play();
     dummySound.volume=volumeGame/32;
 }
@@ -540,7 +581,7 @@ document.addEventListener('keypress', (event) => {
                 }
             }
             else{
-                console.log(isWin);
+                // console.log(isWin);
                 let element=document.getElementById("pauseGame");
                 if(isWin==0&&pauseGame==0)
                 {
@@ -562,20 +603,23 @@ document.addEventListener('keypress', (event) => {
                         isMatchStarted=0;
                         pauseSound("matchStart",0);
                         playSound("mainMenu");
+                        closeWinningTab();
                     }
                     else if(isWin==1&&curSelected==0)
                     {
                         element.style.display="none";
                         playSound("matchStart");
-                        console.log(isWin,pauseGame);
+                        // console.log(isWin,pauseGame);
                         isMatchStarted=0;
+                        closeWinningTab();
                         matchBetweeen(Player["player1"],Player["player2"]);
                     }
                     else if(curSelected==0)
                     {
                         element.style.display="none";
                         playSound("matchStart");
-                        console.log(isWin,pauseGame);
+                        // console.log(isWin,pauseGame);
+                        closeWinningTab();
                     }
                     else if(curSelected==2)
                     {
@@ -641,6 +685,7 @@ document.addEventListener('keypress', (event) => {
                 element.classList.add('invertColor');
             }
             else{
+                // console.log(itr);
                 element.classList.remove('invertColor');
             }
             itr++;
@@ -744,7 +789,7 @@ function reply_click(id1)
             {
                 let element=document.getElementById("startMatch");
                 element.style.backgroundImage=matchScene[getRndInteger(3)];
-                console.log(element);
+                // console.log(element);
                 pauseSound("selectCharacter",1);
                 playSound("matchStart");
                 let playername2=indexWiseCharacters[getRndInteger(6)];
