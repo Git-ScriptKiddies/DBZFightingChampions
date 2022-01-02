@@ -1,0 +1,544 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url('/img/bg.png');
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* justify-content: center; */
+    /* text-align: center; */
+    height: 100vh;
+    overflow-y: hidden;
+}
+#container{
+    display: block;
+    background-image: url('/img/backgroundGame.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 4px solid blue;
+    border-radius: 7px;
+    width: 100vh;
+    height: 80vh;
+    margin: auto;
+    margin-top: 10vh;
+}
+#img1{
+    position: fixed;
+    bottom: 10vh;
+    height: inherit;
+}
+#talks{
+    display: block;
+    background: url('/img/bg-text.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-color: red; */
+    width: 60vh;
+    height: 36vh;
+    margin: auto;
+    margin-left: 45vh;
+    position: fixed;
+    bottom: 12vh;
+}
+#talks h3{
+    padding: 10vh 16vh;
+    height: 11vh;
+}
+#talks img{
+    margin-left: 43vh;
+    z-index: 20;
+    margin-bottom: 20vh;
+    margin-top: -4vh;
+    height: 2vh;
+    animation-name: pressEnter;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes pressEnter {
+    form{
+        margin-top: -4vh;
+    }
+    to{
+        margin-top: -3.5vh;
+    }
+}
+#dragonballs{
+    float: right;
+}
+#dragonballs ul{
+    display: flex;
+}
+#dragonballs ul li{
+    list-style: none;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.3rem;
+}
+.balls img{
+    height: 6vh;
+}
+.invertColor{
+    filter: invert(100%);
+}
+#gameoptions{
+    display: none;
+    margin: auto;
+    background: url(/img/gemeoptions.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 65vh;
+    width: 55vh;
+    margin-left: 50vh;
+    position: fixed;
+    bottom: 10vh;
+}
+#gameoptions ul{
+    list-style: none;
+    padding: 15vh 16vh;
+}
+#gameoptions .box{
+    text-align: center;
+    margin: auto;
+    margin-top: 8px;
+    border: 2px solid orange;
+    border-radius: 12px;
+    height:7vh;
+    margin-left: 18px;
+    width: 20vh;
+}
+#gameoptions h3{
+    padding: 2vh;
+    margin: auto;
+}
+#gameoptions .box:hover{
+    cursor: pointer;
+    font-size: larger;
+    height: 8vh;
+}
+#makeWish{
+    display: none;
+    background-image: url('/img/wishbg1.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 4px solid blue;
+    border-radius: 7px;
+    width: 100vh;
+    height: 80vh;
+    margin: auto;
+    margin-top: 10vh;
+}
+#makeWish ul{
+    list-style: none;
+    position: fixed;
+    bottom: 13.4vh;
+    display: flex;
+    /* padding: 15vh 16vh; */
+}
+#makeWish img{
+    width: 16.6vh;
+    height: 18vh;
+    cursor: pointer;
+}
+.wishtalks{
+    background-color: rgb(255, 187, 0);
+    /* background: none; */
+    position: fixed;
+    border: 3px solid orange;
+    height: 4vh;
+    text-align: center;
+    margin-left: 2vh;
+    width: 96vh;
+    bottom: 10vh;
+    border-radius: 20px;
+}
+.wishtalks h3{
+    padding: 5px;
+}
+.isNotAvailable{
+    filter: invert(100%);
+    cursor: auto;
+}
+/* .isNotAvailable:hover{
+    cursor: progress;
+} */
+#gokufull-Wish{
+    background-image: url('/img/gokufull.png');
+}
+#vegetafull-Wish{
+    background-image: url('/img/vegetafull.png');
+}
+#gogetafull-Wish{
+    background-image: url('/img/gogetafull.png');
+}
+#vegettofull-Wish{
+    background-image: url('/img/vegettofull.png');
+}
+#gohanfull-Wish{
+    background-image: url('/img/gohanfull.png');
+}
+#gotenksfull-Wish{
+    background-image: url('/img/gotenksfull.png');
+}
+#gokufull-Play{
+    background-image: url('/img/gokufull.png');
+}
+#vegetafull-Play{
+    background-image: url('/img/vegetafull.png');
+}
+#gogetafull-Play{
+    background-image: url('/img/gogetafull.png');
+}
+#vegettofull-Play{
+    background-image: url('/img/vegettofull.png');
+}
+#gohanfull-Play{
+    background-image: url('/img/gohanfull.png');
+}
+#gotenksfull-Play{
+    background-image: url('/img/gotenksfull.png');
+}
+.fullImages{
+    display: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 60vh;
+    height: 60vh;
+    width: 34vh;
+    position: fixed;
+    bottom: 30vh;
+}
+#exitWish{
+    background-image: url('/img/back.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 5vh;
+    width: 6vh;
+    filter: invert(50%);
+    cursor: pointer;
+}
+#selectPlayer{
+    display: none;
+    background-image: url('/img/fightday.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 4px solid blue;
+    border-radius: 7px;
+    width: 100vh;
+    height: 80vh;
+    margin: auto;
+    margin-top: 10vh;
+}
+#selectPlayer ul{
+    list-style: none;
+    position: fixed;
+    bottom: 13.4vh;
+    display: flex;
+    /* padding: 15vh 16vh; */
+}
+#selectPlayer img{
+    width: 16.6vh;
+    height: 18vh;
+    cursor: pointer;
+}
+#exitPlay{
+    background-image: url('/img/back.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 5vh;
+    width: 6vh;
+    filter: invert(50%);
+    cursor: pointer;
+}
+#startMatch{
+    display: none;
+    background-image: url('/img/fightday.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 4px solid blue;
+    border-radius: 7px;
+    width: 100vh;
+    height: 80vh;
+    margin: auto;
+    margin-top: 10vh;
+}
+#health{
+    background-color: greenyellow;
+    width: 80vh;
+    border: 2px solid green;
+    border-radius: 4px;
+    position: fixed;
+    top: 14vh;
+    height: 4vh;
+    margin-left: 10vh;
+}
+#healthPlayer1{
+    background-color: white;
+    width: 0vh;
+    border: 2px solid greenyellow;
+    border-radius: 4px;
+    position: fixed;
+    top: 14vh;
+    height: 4vh;
+    margin-left: 50vh;
+}
+#healthPlayer2{
+    background-color: white;
+    width: 0vh;
+    border: 2px solid greenyellow;
+    /* border-radius: 4px; */
+    position: fixed;
+    top: 14vh;
+    height: 4vh;
+    margin-left: 50vh;
+}
+#gameTime{
+    background-image: url('/img/clock.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vh;
+    width: 6vh;
+    position: fixed;
+    top: 13vh;
+    z-index: 1;
+    margin-left: 47vh;
+}
+#player1{
+    background-image: url('/img/gokufull.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10vh;
+    width: 5vh;
+    float: left;
+    margin-left: 2vh;
+}
+#player2{
+    background-image: url('/img/gokufull.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10vh;
+    width: 5vh;
+    float: right;
+    margin-right: 2vh;
+}
+#energyGaugePlayer1{
+    background-color: white;
+    width: 30vh;
+    border: 2px solid yellow;
+    border-radius: 2px;
+    position: fixed;
+    top: 18.7vh;
+    height: 1vh;
+    margin-left: 10vh;
+}
+#energyPlayer1{
+    background-color: yellow;
+    width: 0vh;
+    border: 2px solid yellow;
+    border-radius: 2px;
+    position: fixed;
+    top: 18.7vh;
+    height: 1vh;
+    margin-left: 10vh;
+
+}
+#energyGaugePlayer2{
+    background-color: white;
+    width: 30vh;
+    border: 2px solid yellow;
+    border-radius: 2px;
+    position: fixed;
+    top: 18.7vh;
+    height: 1vh;
+    margin-left: 60vh;
+}
+#energyPlayer2{
+    background-color: yellow;
+    width: 0vh;
+    border: 2px solid yellow;
+    border-radius: 2px;
+    position: fixed;
+    top: 18.7vh;
+    height: 1vh;
+    margin-left: 90vh;
+}
+#player1Character{
+    background-image: url('/img/vegetto/vegettofacingright.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 25vh;
+    width: 20vh;
+    margin-left: 0vh;
+    position: fixed;
+    bottom: 12vh;
+}
+#player2Character{
+    background-image: url('/img/goku/gokufacingLeft.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 25vh;
+    width: 20vh;
+    position: fixed;
+    margin-left: 80vh;
+    bottom: 12vh;
+}
+.jump{
+    animation-name: jump;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes jump{
+    0%{
+        bottom: 12vh;
+    }
+    50%{
+        bottom: 20vh;
+    }
+    100%{
+        bottom: 12vh;
+    }
+}
+#pauseGame{
+    display: none;
+    background-color: gray;
+    opacity: 80%;
+    width: 100vh;
+    height: 80vh;
+}
+#pauseGameContents{
+    padding-top: 20vh;
+    text-align: center;
+}
+#pauseOptions{
+    margin: auto;
+    background: url(/img/dragonbg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 4px solid blue;
+    border-radius: 7px;
+    height: 16.1vh;
+    width: 25vh;
+    margin-top: 10vh;
+    margin-left: 35vh;
+    position: fixed;
+    /* bottom: 70vh; */
+}
+#pauseOptions ul{
+    list-style: none;
+    text-align: center;
+}
+#pauseOptions h3{
+    padding-top: 1vh;
+    height: 4vh;
+}
+.timePass{
+    border: 4px solid red;
+    background-color: cyan;
+    font-size: larger;
+    opacity: 80%;
+    border-radius: 4px;
+}
+#pauseOptions h3:hover{
+    cursor: pointer;
+}
+h3{
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    /* font-family: 'Hind Siliguri', sans-serif; */
+}
+#optionOptions{
+    display: none;
+    margin: auto;
+    background: rgb(0, 162, 255);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 4px solid blue;
+    border-radius: 7px;
+    height: 10.35vh;
+    width: 50vh;
+    margin-top: 10vh;
+    margin-left: 23vh;
+    position: fixed;
+    /* bottom: 70vh; */
+}
+#optionOptions ul{
+    list-style: none;
+    text-align: center;
+}
+#volumeKey h3{
+    text-align: left;
+}
+#volumeKey ul{
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+#volumeVal{
+    margin-top: 0.8vh;
+    background-color: pink;
+    border: 4px solid purple;
+    width: 32vh;
+    height: 1.5vh;
+    margin-left: 5vh;
+}
+#volumeWidth{
+    background-color: greenyellow;
+    width: 32vh;
+    height: inherit;
+}
+#gameSettings{
+    display: none;
+    margin: auto;
+    background: rgb(0, 162, 255);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 4px solid blue;
+    border-radius: 7px;
+    height: 80vh;
+    width: 100vh;
+    margin: auto;
+    margin-top: 10vh;
+    /* bottom: 70vh; */
+}
+#gameSettings ul{
+    list-style: none;
+    text-align: center;
+}
+#volumeKeySettings h3{
+    text-align: left;
+}
+#volumeKeySettings ul{
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+#volumeValSettings{
+    margin-top: 0.8vh;
+    background-color: pink;
+    border: 4px solid purple;
+    width: 32vh;
+    height: 1.5vh;
+    margin-left: 5vh;
+}
+#volumeWidthSettings{
+    background-color: greenyellow;
+    width: 32vh;
+    height: inherit;
+}
