@@ -1,6 +1,6 @@
 #evolutionCharacter{
     display: none;
-    background-image: url('/img/evolutionbg.gif');
+    background-image: url('img/evolutionbg.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -82,7 +82,7 @@
     height: inherit;
 }
 #kickIt{
-    background-image: url('/img/kick.png');
+    background-image: url('img/kick.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -90,7 +90,7 @@
     width: 22vh;
 }
 #punchIt{
-    background-image: url('/img/punch.png');
+    background-image: url('img/punch.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -98,7 +98,7 @@
     width: 22vh;
 }
 #specialmoveIt{
-    background-image: url('/img/specialMove.png');
+    background-image: url('img/specialMove.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
